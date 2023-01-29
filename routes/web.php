@@ -53,8 +53,10 @@ Route::middleware(['auth', 'isAdmin'])->name('admin.')->prefix('/admin')->group(
 
     Route::get('/tamliks', [AdminTamlikController::class, 'index'])->name('tamlik.index');
     Route::get('/tamliks/create', [AdminTamlikController::class, 'create'])->name('tamlik.create');
+    Route::get('/tamliks/create2', [AdminTamlikController::class, 'create2'])->name('tamlik.create2');
     Route::post('/tamliks', [AdminTamlikController::class, 'store'])->name('tamlik.store');
     Route::get('/tamliks/{tamlik}/edit', [AdminTamlikController::class, 'edit'])->name('tamlik.edit');
+    Route::put('/tamliks/{tamlik}', [AdminTamlikController::class, 'update'])->name('tamlik.update');
     Route::delete('/tamliks/{tamlik}', [AdminTamlikController::class, 'destroy'])->name('tamlik.destroy');
     // Route::post('/tamliks/delete-all', [AdminTamlikController::class, 'destroyAll'])->name('tamlik.destroyAll');
 

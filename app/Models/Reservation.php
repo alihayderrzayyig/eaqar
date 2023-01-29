@@ -27,7 +27,7 @@ class Reservation extends Model
                 // dd($row);
                 try{
                     self::updateOrCreate([
-                        'sub_id' => $row[0],
+                        'sub_id' => (int)$row[0],
                     ],[
                         'name' => $row[1],
                         'mother_name' => $row[2],

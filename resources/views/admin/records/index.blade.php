@@ -11,7 +11,7 @@
             </span>
             <form action="{{ route('admin.record.index') }}" method="get">
                 <input
-                    class="w-32 pl-10 text-right pr-4 rounded-md form-input sm:w-64 focus:border-indigo-600 direction-rtl"
+                    class="w-32 pl-10 pr-4 text-right rounded-md form-input sm:w-64 focus:border-indigo-600 direction-rtl"
                     type="text" name="search" value="{{old('search')}}" placeholder="Search">
             </form>
         </div>
@@ -24,7 +24,7 @@
 
 
             <a href="#"
-                class="px-4 py-2 text-white bg-green-800 rounded hover:bg-green-700">{{ __('add') }}</a>
+                class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">{{ __('add') }}</a>
 
         </div>
 
@@ -33,10 +33,10 @@
                 <thead
                     class="sticky top-0 text-xs text-gray-100 uppercase bg-gray-700 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="py-4 px-4">
+                        <th scope="col" class="px-4 py-4">
                             اسم المالك
                         </th>
-                        <th scope="col" class="py-4 px-4">
+                        <th scope="col" class="px-4 py-4">
                             رقم العقار
                         </th>
                         <th scope="col" class="px-6 py-4">

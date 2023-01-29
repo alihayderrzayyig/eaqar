@@ -24,7 +24,7 @@
             <a href="{{ route('admin.reservation.create') }} "
                 class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">Import from Excel</a>
 
-            <a href="#" class="px-4 py-2 text-white bg-green-800 rounded hover:bg-green-700">{{ __('add') }}</a>
+            <a href="#" class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">{{ __('add') }}</a>
         </div>
 
         <div class="overflow-x-auto bg-white shadow-md sm:rounded-lg">
@@ -32,14 +32,14 @@
                 <thead
                     class="sticky top-0 text-xs text-gray-100 uppercase bg-gray-700 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="py-4 px-4">
+                        <th scope="col" class="px-4 py-4">
                             {{ __('الاسم') }}
                         </th>
-                        <th scope="col" class="py-4 px-4">
+                        <th scope="col" class="px-4 py-4">
                             {{ __('اسم الام') }}
                         </th>
 
-                        <th scope="col" class="py-4 px-4">
+                        <th scope="col" class="px-4 py-4">
                             {{ __('النوع') }}
                         </th>
                         <th scope="col" class="px-6 py-3">

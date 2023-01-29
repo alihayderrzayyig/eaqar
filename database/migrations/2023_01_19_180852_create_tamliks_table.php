@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tamliks', function (Blueprint $table) {
             $table->id();
-            $table->string('serial_number');
+            $table->bigInteger('serial_number')->unique();
             $table->string('book_number');
             $table->string('name');
             $table->string('piece_number')->nullable();

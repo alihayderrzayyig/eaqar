@@ -24,7 +24,7 @@ class Record extends Model
             foreach ($data as $row) {
                 // dd($row);
                 self::updateOrCreate([
-                    'sub_id' => $row[0],
+                    'sub_id' => (int)$row[0],
                 ],[
                     'number' => $row[1],
                     'history' => $row[2],
