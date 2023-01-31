@@ -27,6 +27,12 @@
             <a href="{{ route('admin.tamlik.create2') }}"
                 class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">{{ __('add') }}</a>
 
+            {{-- <form action="{{ route('admin.tamlik.destroyAll') }}" method="post">
+                @csrf
+                <button type="submit"
+                    class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">RemoveAll</button>
+            </form> --}}
+
         </div>
 
         <div class="relative overflow-x-auto bg-white shadow-md sm:rounded-lg">

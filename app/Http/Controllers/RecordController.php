@@ -10,7 +10,7 @@ class RecordController extends Controller
     public function index(Request $request)
     {
         session()->flashInput($request->input());
-        
+
         if(isset($_GET['details'])){
             $details = DB::table('records')->orderBy('sub_id', 'asc')->where('block_number', $request->details)->get();
             return view('record.index')->with(['details' => $details]);
@@ -22,7 +22,9 @@ class RecordController extends Controller
         ) {
 
             $records = DB::table('records')->orderBy('sub_id', 'asc')
+                -> when($request->name !== null)
                 ->where('owner_name', 'like', '%' . $request->name . '%')
+                ->orWhere('block_number', 'like', '%' . $request->name . '%')
                 ->when($request->piece_number !== null)
                 ->where('block_number', $request->piece_number)
                 ->paginate(25);

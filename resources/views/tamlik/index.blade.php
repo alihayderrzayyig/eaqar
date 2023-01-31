@@ -13,7 +13,7 @@
     </x-slot>
 
     <div class="py-12 text-right direction-rtl">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-8xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 {{-- <div class="p-6 text-center text-gray-900 direction-rtl">
                     {{ __('التمليك الجديد') }}
@@ -49,20 +49,20 @@
 
 
                 <form method="get" action="{{ route('tamliks.index') }}" class="px-20 py-10">
-                    <div class="flex gap-5">
-                        <div class="flex-1">
+                    <div class="gap-5 block sm:flex sm:flex-wrap md:flex-nowrap">
+                        <div class="sm:w-full md:flex-1">
                             <x-input-label for="name" :value="__('الاسم')" />
                             <x-text-input id="name" name="name" type="text" :value="old('name')"
                                 class="block w-full mt-1" />
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
                         </div>
-                        <div class="flex-2">
+                        <div class="sm:flex-1 md:flex-none">
                             <x-input-label for="piece_number" :value="__('رقم القطعة')" />
                             <x-text-input id="piece_number" name="piece_number" type="text" :value="old('piece_number')"
                                 class="block w-full mt-1 " />
                             <x-input-error class="mt-2" :messages="$errors->get('piece_number')" />
                         </div>
-                        <div class="flex-2">
+                        <div class="sm:flex-1 md:flex-none">
                             <x-input-label for="serial_number" :value="__('التسلسل')" />
                             <x-text-input id="serial_number" name="serial_number" type="text" :value="old('serial_number')"
                                 class="block w-full mt-1 " />
@@ -80,7 +80,7 @@
                 @if (isset($tamliks) && !$tamliks->isEmpty())
                     <div class="px-20 pb-10">
                         <div class="relative overflow-x-auto border shadow-md sm:rounded-lg">
-                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <table class="w-full text-lg text-left text-gray-700 dark:text-gray-400">
                                 <thead
                                     class="text-xs text-right text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>

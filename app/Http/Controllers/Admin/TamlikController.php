@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\TamliksImport;
 use App\Models\Tamlik;
 use Illuminate\Http\Request;
 

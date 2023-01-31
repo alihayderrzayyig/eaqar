@@ -58,6 +58,7 @@ Route::middleware(['auth', 'isAdmin'])->name('admin.')->prefix('/admin')->group(
     Route::get('/tamliks/{tamlik}/edit', [AdminTamlikController::class, 'edit'])->name('tamlik.edit');
     Route::put('/tamliks/{tamlik}', [AdminTamlikController::class, 'update'])->name('tamlik.update');
     Route::delete('/tamliks/{tamlik}', [AdminTamlikController::class, 'destroy'])->name('tamlik.destroy');
+
     // Route::post('/tamliks/delete-all', [AdminTamlikController::class, 'destroyAll'])->name('tamlik.destroyAll');
 
     Route::get('/reservations', [AdminReservationController::class, 'index'])->name('reservation.index');

@@ -64,7 +64,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('الملف الشخصي') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -74,7 +74,7 @@
                             <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('تسجيل الخروج') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -98,23 +98,46 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden ">
+
+        <div class="pt-2 pb-3 space-y-1 direction-rtl text-right">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('الرئيسية') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('tamliks.index')" :active="request()->routeIs('tamliks.index')">
+                {{ __('التمليك الجديد') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('record.index')" :active="request()->routeIs('record.index')">
+                {{ __('السجلات') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('reservation.index')" :active="request()->routeIs('reservation.index')">
+                {{ __('الحجوزات') }}
             </x-responsive-nav-link>
         </div>
 
+
+
+
+
+
+
+
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
+        <div class="pt-4 pb-1 border-t border-gray-200 direction-rtl text-right">
+            {{-- <div class="px-4">
                 <div class="text-base font-medium text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="text-sm font-medium text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
+            </div> --}}
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('الملف الشخصي') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -124,7 +147,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                         onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('تسجيل الخروج') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

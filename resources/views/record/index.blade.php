@@ -13,11 +13,11 @@
     </x-slot>
 
     <div class="py-12 text-right direction-rtl">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-8xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
 
                 <form method="get" action="{{ route('record.index') }}" class="px-20 py-10">
-                    <div class="flex gap-5">
+                    <div class="block gap-5 sm:flex">
                         <div class="flex-1">
                             <x-input-label for="name" :value="__('الاسم')" />
                             <x-text-input id="name" name="name" type="text" :value="old('name')"
@@ -42,7 +42,7 @@
                 @if (isset($records) && !$records->isEmpty())
                     <div class="px-20 pb-10">
                         <div class="relative overflow-x-auto border shadow-md sm:rounded-lg">
-                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <table class="w-full text-lg text-left text-gray-700 dark:text-gray-400">
                                 <thead
                                     class="text-xs text-right text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
@@ -56,6 +56,9 @@
                                             المقاطعة
                                         </th>
                                         <th scope="col" class="px-6 py-3">
+                                            نوع المعاملة
+                                        </th>
+                                         <th scope="col" class="px-6 py-3">
                                             التفاصيل
                                         </th>
                                     </tr>
@@ -80,6 +83,9 @@
                                                 {{ $item->district_name }}
                                             </td>
                                             <td class="px-6 py-4">
+                                                {{ $item->transaction_type }}
+                                            </td>
+                                            <td class="px-6 py-4">
                                                 <div>
                                                     <!-- Modal toggle -->
                                                     <button
@@ -96,7 +102,7 @@
                                                     </button>
 
                                                     <!-- Main modal -->
-                                                    <div class="fixed top-0 left-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full bg-gray-900/80 direction-ltr"
+                                                    <div class="fixed top-0 left-0 z-50 hidden w-full h-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full bg-gray-900/80 direction-ltr"
                                                         id="{{ $item->id }}">
                                                         <div class="relative w-full max-w-2xl md:h-auto left-1/2"
                                                             style="transform: translate(-50%,10%); height: fit-content !important">
@@ -154,7 +160,7 @@
                                                                         </div>
                                                                         <div class="flex items-center mr-5">
                                                                             <h2 class="ml-2 text-lg font-bold">
-                                                                                {{ __('نوعالمعاملة:') }}
+                                                                                {{ __('نوع المعاملة:') }}
                                                                             </h2>
                                                                             <h3 class="text-lg">
                                                                                 {{ $item->transaction_type }}</h3>
