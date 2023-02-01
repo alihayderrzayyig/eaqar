@@ -27,11 +27,11 @@ class TamlikController extends Controller
         }
     }
 
-    public function create()
+    public function import()
     {
         return view('admin.tamliks.import');
     }
-    public function create2()
+    public function create()
     {
         return view('admin.tamliks.edit');
     }
@@ -39,6 +39,7 @@ class TamlikController extends Controller
 
     public function store(Request $request)
     {
+        // dd("dddddd");
         if ($request->has('file')) {
             // dd('file');
             $request->validate([
@@ -55,14 +56,12 @@ class TamlikController extends Controller
             (new Tamlik())->ImportToDb();
             return redirect()->route('admin.tamlik.index')->with('message', 'file added!');
         } else {
-            // dd('nofile');
             $request->validate([
                 'book_number' => "required|string",
                 'name' => "required|string",
                 'piece_number' => "required|string",
             ]);
             $tamlik = DB::table('tamliks')->orderBy('serial_number', 'desc')->first();
-            // dd($tamlik);
             Tamlik::create([
                 'serial_number' => 1 + (int)$tamlik->serial_number,
                 'book_number' => $request->book_number,
@@ -76,8 +75,6 @@ class TamlikController extends Controller
 
     public function edit(Tamlik $tamlik)
     {
-
-        // return redirect()->back();
         return view('admin.tamliks.edit', compact('tamlik'));
     }
 

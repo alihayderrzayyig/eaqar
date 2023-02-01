@@ -9,7 +9,7 @@
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </span>
-            <form action="{{ route('admin.tamlik.index') }}" method="get">
+            <form action="{{ route('admin.tamliks.index') }}" method="get">
                 <input
                     class="w-32 pl-10 pr-4 text-right rounded-md form-input sm:w-64 focus:border-indigo-600 direction-rtl"
                     type="text" name="search" value="{{ old('search') }}" placeholder="Search">
@@ -20,11 +20,11 @@
 
     <div class="max-w-6xl mx-auto mt-12">
         <div class="flex flex-row-reverse justify-between py-2 my-2">
-            <a href="{{ route('admin.tamlik.create') }} "
+            <a href="{{ route('admin.tamliks.import') }} "
                 class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">Import from Excel</a>
 
 
-            <a href="{{ route('admin.tamlik.create2') }}"
+            <a href="{{ route('admin.tamliks.create') }}"
                 class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">{{ __('add') }}</a>
 
             {{-- <form action="{{ route('admin.tamlik.destroyAll') }}" method="post">
@@ -89,7 +89,7 @@
 
                             <td class="px-6 py-4 text-left">
                                 <div class="flex float-left space-x-3">
-                                    <a href="{{ route('admin.tamlik.edit', $use->id) }}"
+                                    <a href="{{ route('admin.tamliks.edit', $use->id) }}"
                                         class="ml-5 font-medium text-yellow-600 dark:text-blue-500 hover:underline"><svg
                                             class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24"
                                             stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -100,7 +100,7 @@
                                             <circle cx="12" cy="12" r="3" />
                                         </svg></a>
 
-                                    <form action="{{ route('admin.tamlik.destroy', $use->id) }}" method="post"
+                                    <form action="{{ route('admin.tamliks.destroy', $use->id) }}" method="post"
                                         onsubmit="return confirm('Are you sure?')"
                                         class="font-medium text-red-600 dark:text-blue-500 hover:underline">
                                         @csrf

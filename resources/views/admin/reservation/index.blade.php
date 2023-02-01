@@ -9,7 +9,7 @@
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </span>
-            <form action="{{ route('admin.reservation.search') }}" method="get">
+            <form action="{{ route('admin.reservations.search') }}" method="get">
                 @csrf
                 <input
                     class="w-32 pl-10 pr-4 text-right rounded-md form-input sm:w-64 focus:border-indigo-600 direction-rtl"
@@ -21,10 +21,11 @@
 
     <div class="relative max-w-6xl mx-auto mt-12">
         <div class="flex flex-row-reverse justify-between py-2 my-2">
-            <a href="{{ route('admin.reservation.create') }} "
+            <a href="{{ route('admin.reservations.import') }} "
                 class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">Import from Excel</a>
 
-            <a href="#" class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">{{ __('add') }}</a>
+            <a href="{{ route('admin.reservations.create') }}"
+                class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-500">{{ __('add') }}</a>
         </div>
 
         <div class="overflow-x-auto bg-white shadow-md sm:rounded-lg">
@@ -139,6 +140,10 @@
                                                                 <h2 class="ml-2 text-lg font-bold">تاريخ الكتاب:</h2>
                                                                 <h3 class="text-lg">{{ $item->history }}</h3>
                                                             </div>
+                                                            <div class="flex items-center mr-5">
+                                                                <h2 class="ml-2 text-lg font-bold">القرص:</h2>
+                                                                <h3 class="text-lg">{{ $item->disc_num }}</h3>
+                                                            </div>
                                                         </div>
                                                         <div class="flex">
                                                             <div class="flex items-center">
@@ -167,7 +172,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href=""
+                                    <a href="{{ route('admin.reservations.edit', $item->id) }}"
                                         class="ml-5 font-medium text-yellow-600 dark:text-blue-500 hover:underline">
                                         <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24"
                                             stroke-width="2" stroke="currentColor" fill="none"
@@ -178,8 +183,8 @@
                                             <circle cx="12" cy="12" r="3" />
                                         </svg>
                                     </a>
-                                    <form action="{{ route('admin.reservation.destroy', $item->id) }}" method="post"
-                                        onsubmit="return confirm('Are you sure?')"
+                                    <form action="{{ route('admin.reservations.destroy', $item->id) }}"
+                                        method="post" onsubmit="return confirm('Are you sure?')"
                                         class="font-medium text-red-600 dark:text-blue-500 hover:underline">
                                         @csrf
                                         @method('delete')

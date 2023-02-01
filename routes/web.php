@@ -51,21 +51,27 @@ Route::middleware(['auth', 'isAdmin'])->name('admin.')->prefix('/admin')->group(
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::resource('/users', UserController::class);
 
-    Route::get('/tamliks', [AdminTamlikController::class, 'index'])->name('tamlik.index');
-    Route::get('/tamliks/create', [AdminTamlikController::class, 'create'])->name('tamlik.create');
-    Route::get('/tamliks/create2', [AdminTamlikController::class, 'create2'])->name('tamlik.create2');
-    Route::post('/tamliks', [AdminTamlikController::class, 'store'])->name('tamlik.store');
-    Route::get('/tamliks/{tamlik}/edit', [AdminTamlikController::class, 'edit'])->name('tamlik.edit');
-    Route::put('/tamliks/{tamlik}', [AdminTamlikController::class, 'update'])->name('tamlik.update');
-    Route::delete('/tamliks/{tamlik}', [AdminTamlikController::class, 'destroy'])->name('tamlik.destroy');
+    // Route::get('/tamliks', [AdminTamlikController::class, 'index'])->name('tamlik.index');
+    // Route::get('/tamliks/create', [AdminTamlikController::class, 'create'])->name('tamlik.create');
+    // Route::post('/tamliks', [AdminTamlikController::class, 'store'])->name('tamlik.store');
+    // Route::get('/tamliks/{tamlik}/edit', [AdminTamlikController::class, 'edit'])->name('tamlik.edit');
+    // Route::put('/tamliks/{tamlik}', [AdminTamlikController::class, 'update'])->name('tamlik.update');
+    // Route::delete('/tamliks/{tamlik}', [AdminTamlikController::class, 'destroy'])->name('tamlik.destroy');
+    Route::get('/tamliks/import', [AdminTamlikController::class, 'import'])->name('tamliks.import');
+    Route::resource('/tamliks', AdminTamlikController::class);
 
     // Route::post('/tamliks/delete-all', [AdminTamlikController::class, 'destroyAll'])->name('tamlik.destroyAll');
 
-    Route::get('/reservations', [AdminReservationController::class, 'index'])->name('reservation.index');
-    Route::get('/reservations/create', [AdminReservationController::class, 'create'])->name('reservation.create');
-    Route::post('/reservations', [AdminReservationController::class, 'store'])->name('reservation.store');
-    Route::get('/reservations/search', [AdminReservationController::class, 'search'])->name('reservation.search');
-    Route::delete('/reservations/{reservation}', [AdminReservationController::class, 'destroy'])->name('reservation.destroy');
+    // Route::get('/reservations', [AdminReservationController::class, 'index'])->name('reservation.index');
+    // Route::get('/reservations/create', [AdminReservationController::class, 'create'])->name('reservation.create');
+    // Route::post('/reservations', [AdminReservationController::class, 'store'])->name('reservation.store');
+    // Route::get('/reservations/{reservation}/edit', [AdminReservationController::class, 'edit'])->name('reservation.edit');
+    // Route::put('/reservations/{reservation}', [AdminReservationController::class, 'update'])->name('reservation.update');
+    // Route::delete('/reservations/{reservation}', [AdminReservationController::class, 'destroy'])->name('reservation.destroy');
+    Route::get('/reservations/import', [AdminReservationController::class, 'import'])->name('reservations.import');
+    Route::get('/reservations/search', [AdminReservationController::class, 'search'])->name('reservations.search');
+    Route::resource('/reservations', AdminReservationController::class);
+
 
     Route::get('/records', [AdminRecordController::class, 'index'])->name('record.index');
     Route::get('/records/create', [AdminRecordController::class, 'create'])->name('record.create');

@@ -44,7 +44,10 @@
             </span>
         </x-dash-link>
 
-        <x-dash-link :href="route('admin.reservation.index')" :active="request()->routeIs('admin.reservation.index')">
+        <x-dash-link :href="route('admin.reservations.index')" :active="request()->routeIs('admin.reservations.index') ||
+            request()->routeIs('admin.reservations.create') ||
+            request()->routeIs('admin.reservations.import') ||
+            request()->routeIs('admin.reservations.edit')">
             <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" />
@@ -58,7 +61,10 @@
         </x-dash-link>
 
 
-        <x-dash-link :href="route('admin.tamlik.index')" :active="request()->routeIs('admin.tamlik.index')">
+        <x-dash-link :href="route('admin.tamliks.index')" :active="request()->routeIs('admin.tamliks.index') ||
+            request()->routeIs('admin.tamliks.create') ||
+            request()->routeIs('admin.tamliks.import') ||
+            request()->routeIs('admin.tamliks.edit')">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -71,15 +77,17 @@
 
 
 
-        <x-dash-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index')">
+        <x-dash-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index') ||
+            request()->routeIs('admin.users.create') ||
+            request()->routeIs('admin.users.edit')">
             {{-- <div class="flex items-center"> --}}
-                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-                <span class="mx-3">
-                    {{ __('Users') }}
-                </span>
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span class="mx-3">
+                {{ __('Users') }}
+            </span>
             {{-- </div> --}}
         </x-dash-link>
 
