@@ -23,7 +23,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('record.index')" :active="request()->routeIs('record.index')">
+                    <x-nav-link :href="route('records.index')" :active="request()->routeIs('records.index')">
                         {{ __('السجلات') }}
                     </x-nav-link>
                 </div>
@@ -100,7 +100,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden ">
 
-        <div class="pt-2 pb-3 space-y-1 direction-rtl text-right">
+        <div class="pt-2 pb-3 space-y-1 text-right direction-rtl">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('الرئيسية') }}
             </x-responsive-nav-link>
@@ -111,7 +111,7 @@
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('record.index')" :active="request()->routeIs('record.index')">
+            <x-responsive-nav-link :href="route('records.index')" :active="request()->routeIs('records.index')">
                 {{ __('السجلات') }}
             </x-responsive-nav-link>
         </div>
@@ -129,7 +129,7 @@
 
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 direction-rtl text-right">
+        <div class="pt-4 pb-1 text-right border-t border-gray-200 direction-rtl">
             {{-- <div class="px-4">
                 <div class="text-base font-medium text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="text-sm font-medium text-gray-500">{{ Auth::user()->email }}</div>

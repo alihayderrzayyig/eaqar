@@ -33,7 +33,10 @@
             </span>
         </x-dash-link>
 
-        <x-dash-link :href="route('admin.record.index')" :active="request()->routeIs('admin.record.index')">
+        <x-dash-link :href="route('admin.records.index')" :active="request()->routeIs('admin.records.index') ||
+            request()->routeIs('admin.records.edit') ||
+            request()->routeIs('admin.records.create') ||
+            request()->routeIs('admin.records.import')">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -16,12 +16,12 @@
         <div class="mx-auto max-w-8xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
 
-                <form method="get" action="{{ route('record.index') }}" class="px-20 py-10">
+                <form method="get" action="{{ route('records.index') }}" class="px-20 py-10">
                     <div class="block gap-5 sm:flex">
                         <div class="flex-1">
                             <x-input-label for="name" :value="__('الاسم')" />
                             <x-text-input id="name" name="name" type="text" :value="old('name')"
-                                class="block w-full mt-1" />
+                                class="block w-full mt-1" autofocus />
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
                         </div>
                         <div class="flex-2">
@@ -71,7 +71,7 @@
                                                 {{ $item->owner_name }}
                                             </th>
                                             <td class="px-6 py-4">
-                                                <form action="{{ route('record.index') }}" method="get">
+                                                <form action="{{ route('records.index') }}" method="get">
                                                     <input type="hidden" name="details"
                                                         value="{{ $item->block_number }}">
                                                     <button type="submit">
@@ -307,7 +307,7 @@
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    <form action="{{ route('record.index') }}" method="get">
+                                                    <form action="{{ route('records.index') }}" method="get">
                                                         <input type="hidden" name="details"
                                                             value="{{ $item->block_number }}">
                                                         <button type="submit">

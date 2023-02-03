@@ -1,10 +1,10 @@
 <x-admin-layout>
     <div class="flex py-2">
-        <a href="{{ route('admin.record.index') }}"
+        <a href="{{ route('admin.records.index') }}"
             class="px-4 py-2 text-white transition-colors ease-out bg-indigo-600 rounded hover:bg-indigo-500">Back</a>
     </div>
     <div class="p-6 mx-auto bg-gray-100 rounded-lg ">
-        <form method="POST" action="{{ route('admin.record.store') }}" enctype="multipart/form-data" class="space-y-5">
+        <form method="POST" action="{{ route('admin.records.store') }}" enctype="multipart/form-data" class="space-y-5">
             @csrf
             <div class="flex gap-4">
                 <div class="flex-1">

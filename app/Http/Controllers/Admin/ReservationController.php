@@ -13,7 +13,6 @@ class ReservationController extends Controller
     {
         $reservations = DB::table('reservations')->orderBy('sub_id', 'asc')->paginate(25);
         return view('admin.reservation.index', compact('reservations'));
-        // return view('admin.reservation.index');
     }
 
     public function import()
@@ -64,6 +63,7 @@ class ReservationController extends Controller
 
             ]);
             return redirect()->back()->with('message', 'added!');
+
         }
     }
 

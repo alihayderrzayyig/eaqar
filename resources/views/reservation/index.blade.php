@@ -26,7 +26,7 @@
                         <div class="flex-1">
                             <x-input-label for="name" :value="__('الاسم')" />
                             <x-text-input id="name" name="query" type="text" :value="old('query')"
-                                class="block w-full mt-1" />
+                                class="block w-full mt-1" autofocus/>
                             <x-input-error class="mt-2" :messages="$errors->get('query')" />
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                                                         <!-- Main modal -->
                                                         <div class="fixed top-0 left-0 z-50 hidden w-full h-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full bg-gray-900/80 direction-ltr"
                                                             id="{{ $item->id }}">
-                                                            <div class="relative w-full  max-w-2xl md:h-auto left-1/2"
+                                                            <div class="relative w-full max-w-2xl md:h-auto left-1/2"
                                                                 style="transform: translate(-50%,30%); height: fit-content !important">
                                                                 <!-- Modal content -->
                                                                 <div
