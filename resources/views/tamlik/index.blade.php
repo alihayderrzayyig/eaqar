@@ -124,9 +124,11 @@
 
                     </div>
                 @else
-                    <h3 class="mb-5 text-2xl font-bold text-center text-gray-400">
-                        لم يتم العثور على شيئ
-                    </h3>
+                    @if (isset($tamliks))
+                        <h3 class="mb-5 text-2xl font-bold text-center text-gray-400">
+                            لم يتم العثور على شيئ
+                        </h3>
+                    @endif
                 @endif
 
             </div>

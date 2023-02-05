@@ -58,7 +58,7 @@
                                         <th scope="col" class="px-6 py-3">
                                             نوع المعاملة
                                         </th>
-                                         <th scope="col" class="px-6 py-3">
+                                        <th scope="col" class="px-6 py-3">
                                             التفاصيل
                                         </th>
                                     </tr>
@@ -177,7 +177,7 @@
                                                                     </div>
                                                                     <hr>
                                                                     <h3>
-                                                                        {{ __("قيد التسجيل") }}
+                                                                        {{ __('قيد التسجيل') }}
                                                                     </h3>
                                                                     <div class="flex">
                                                                         <div class="flex items-center">
@@ -192,7 +192,8 @@
                                                                                 {{ __('التاريخ:') }}
                                                                             </h2>
                                                                             <h3 class="text-lg">
-                                                                                {{ $item->history." ".$item->year }}</h3>
+                                                                                {{ $item->history . ' ' . $item->year }}
+                                                                            </h3>
                                                                         </div>
                                                                         <div class="flex items-center mr-5">
                                                                             <h2 class="ml-2 text-lg font-bold">
@@ -203,13 +204,13 @@
                                                                         </div>
                                                                     </div>
                                                                     <hr>
-                                                                     <h3>
-                                                                        {{ __("المساحة") }}
+                                                                    <h3>
+                                                                        {{ __('المساحة') }}
                                                                     </h3>
                                                                     <div class="flex justify-between">
                                                                         <div class="flex items-center">
                                                                             <h2 class="ml-2 text-lg font-bold">
-                                                                               {{ __('متر:') }}
+                                                                                {{ __('متر:') }}
                                                                             </h2>
                                                                             <h3 class="text-lg">
                                                                                 {{ $item->meter }}
@@ -217,7 +218,7 @@
                                                                         </div>
                                                                         <div class="flex items-center">
                                                                             <h2 class="ml-2 text-lg font-bold">
-                                                                               {{ __('اولك:') }}
+                                                                                {{ __('اولك:') }}
                                                                             </h2>
                                                                             <h3 class="text-lg">
                                                                                 {{ $item->olc }}
@@ -225,7 +226,7 @@
                                                                         </div>
                                                                         <div class="flex items-center">
                                                                             <h2 class="ml-2 text-lg font-bold">
-                                                                               {{ __('دونم:') }}
+                                                                                {{ __('دونم:') }}
                                                                             </h2>
                                                                             <h3 class="text-lg">
                                                                                 {{ $item->dunum }}
@@ -332,9 +333,11 @@
                             </div>
                         </div>
                     @else
-                        <h3 class="mb-5 text-2xl font-bold text-center text-gray-400">
-                            لم يتم العثور على شيئ
-                        </h3>
+                        @isset($records)
+                            <h3 class="mb-5 text-2xl font-bold text-center text-gray-400">
+                                لم يتم العثور على شيئ
+                            </h3>
+                        @endisset
                     @endif
                 @endif
 

@@ -12,7 +12,7 @@
             class="px-4 py-2 text-white transition-colors ease-out bg-indigo-600 rounded hover:bg-indigo-500">Back</a>
     </div>
     <div class="p-6 mx-auto bg-gray-100 rounded-lg ">
-        <form method="POST" action="{{ route('admin.reservations.import') }}" enctype="multipart/form-data"
+        <form method="POST" action="{{ route('admin.reservations.store') }}" enctype="multipart/form-data"
             class="space-y-5">
             @csrf
             <div class="flex gap-4">

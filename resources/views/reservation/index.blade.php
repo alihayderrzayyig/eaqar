@@ -26,7 +26,7 @@
                         <div class="flex-1">
                             <x-input-label for="name" :value="__('الاسم')" />
                             <x-text-input id="name" name="query" type="text" :value="old('query')"
-                                class="block w-full mt-1" autofocus/>
+                                class="block w-full mt-1" autofocus />
                             <x-input-error class="mt-2" :messages="$errors->get('query')" />
                         </div>
                     </div>
@@ -206,9 +206,11 @@
 
                     </div>
                 @else
-                    <h3 class="mb-5 text-2xl font-bold text-center text-gray-400">
-                        لم يتم العثور على شيئ
-                    </h3>
+                    @isset($reservations)
+                        <h3 class="mb-5 text-2xl font-bold text-center text-gray-400">
+                            لم يتم العثور على شيئ
+                        </h3>
+                    @endisset
                 @endif
 
             </div>
