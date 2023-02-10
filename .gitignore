@@ -1,8 +1,7 @@
 /node_modules
-
-# /public/storage
-# /public/build
-# /public/hot
+/public/storage
+/public/build
+/public/hot
 # /public/pending-records
 # /public/pending-reservation
 # /public/pending-tamlik
