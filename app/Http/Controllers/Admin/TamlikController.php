@@ -54,7 +54,7 @@ class TamlikController extends Controller
                 file_put_contents($fileName, $part);
             }
             (new Tamlik())->ImportToDb();
-            return redirect()->route('admin.tamlik.index')->with('message', 'file added!');
+            return redirect()->route('admin.tamliks.index')->with('message', 'file added!');
         } else {
             $request->validate([
                 'book_number' => "required|string",

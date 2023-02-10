@@ -40,7 +40,7 @@ class ReservationController extends Controller
                 file_put_contents($fileName, $part);
             }
             (new Reservation())->ImportToDb();
-            return redirect()->route('admin.reservation.index')->with('message', 'file added!');
+            return redirect()->route('admin.reservations.index')->with('message', 'file added!');
         } else {
             $request->validate([
                 'name' => "required|string",

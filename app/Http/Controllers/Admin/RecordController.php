@@ -53,7 +53,7 @@ class RecordController extends Controller
             }
             (new Record())->ImportToDb();
 
-            return redirect()->route('admin.record.index')->with('message', 'file added!');
+            return redirect()->route('admin.records.index')->with('message', 'file added!');
         } else {
             $request->validate([
                 'number' => "required|string",
