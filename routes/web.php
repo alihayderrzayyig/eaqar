@@ -62,4 +62,8 @@ Route::middleware(['auth', 'isAdmin'])->name('admin.')->prefix('/admin')->group(
 });
 
 
+Route::get('/get-info', function(){
+    phpinfo();
+});
+
 require __DIR__ . '/auth.php';
