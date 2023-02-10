@@ -47,6 +47,8 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'isAdmin'])->name('admin.')->prefix('/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::get('/go-home', [AdminController::class, 'goHome'])->name('goHome');
+
     Route::resource('/users', UserController::class);
 
     Route::get('/tamliks/import', [AdminTamlikController::class, 'import'])->name('tamliks.import');

@@ -99,7 +99,7 @@
 
 
         <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-            href="{{ route('dashboard') }}">
+            href="{{ route('admin.goHome') }}">
 
             <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
