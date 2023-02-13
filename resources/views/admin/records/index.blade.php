@@ -34,6 +34,9 @@
                     class="sticky top-0 text-xs text-gray-100 uppercase bg-gray-700 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-4 py-4">
+                            تسلسك
+                        </th>
+                        <th scope="col" class="px-4 py-4">
                             اسم المالك
                         </th>
                         <th scope="col" class="px-4 py-4">
@@ -50,6 +53,11 @@
 
                     @foreach ($records as $item)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row"
+                                class="px-4 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                {{-- {{ substr($item->owner_name, 1,10).'..' }} --}}
+                                {{ $item->sub_id }}
+                            </th>
                             <th scope="row"
                                 class="px-4 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                                 {{-- {{ substr($item->owner_name, 1,10).'..' }} --}}

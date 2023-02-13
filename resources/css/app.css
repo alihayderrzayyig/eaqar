@@ -1,10 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+/* @import "/node_modules/font-awesome/css/font-awesome.css"; */
+
+@import '/node_modules/@fortawesome/fontawesome-free/css/fontawesome';
+@import '/node_modules/@fortawesome/fontawesome-free/css/regular';
+@import '/node_modules/@fortawesome/fontawesome-free/css/solid';
+@import '/node_modules/@fortawesome/fontawesome-free/css/brands';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-        font-family: 'Tajawal', sans-serif;
+    font-family: "Tajawal", sans-serif;
 }
 
 @layer base {
@@ -13,5 +20,79 @@
     }
     .direction-ltr {
         direction: ltr;
+    }
+}
+
+@layer components {
+    .h5 {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+
+    .badge {
+        padding: 2px 0;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .badge-primary {
+        --bg-opacity: 1;
+        background-color: #b2f5ea;
+        background-color: rgba(178, 245, 234, var(--bg-opacity));
+        border-width: 1px;
+        --border-opacity: 1;
+        border-color: #81e6d9;
+        border-color: rgba(129, 230, 217, var(--border-opacity));
+        --text-opacity: 1;
+        color: #319795;
+        color: rgba(49, 151, 149, var(--text-opacity));
+        border-radius: 0.25rem;
+        text-transform: lowercase;
+    }
+
+    .card {
+        border-radius: 0.25rem;
+        --bg-opacity: 1;
+        background-color: #fff;
+        background-color: rgba(255, 255, 255, var(--bg-opacity));
+        border-width: 1px;
+        --border-opacity: 1;
+        border-color: #e2e8f0;
+        border-color: rgba(226, 232, 240, var(--border-opacity));
+    }
+
+    .card .card-header {
+        border-bottom-width: 1px;
+        padding: 1.5rem;
+    }
+
+    .card .card-body {
+        padding: 1.5rem;
+    }
+
+    .card .card-footer {
+        border-top-width: 1px;
+        padding: 1.5rem;
+    }
+
+    .report-card:hover .card {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --border-opacity: 1;
+        border-color: #fff;
+        border-color: rgba(255, 255, 255, var(--border-opacity));
+        transform: scale(1.01);
+    }
+
+    .report-card:hover .footer {
+        padding: 0;
+        border-width: 0;
+    }
+
+    .report-card .footer,
+    .report-card .card {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
     }
 }

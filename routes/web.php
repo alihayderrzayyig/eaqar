@@ -65,7 +65,32 @@ Route::middleware(['auth', 'isAdmin'])->name('admin.')->prefix('/admin')->group(
 
 
 Route::get('/get-info', function(){
-    phpinfo();
+    $count=0;
+
+    $path1 = public_path('pending-records/*.csv');
+    $files1 = glob($path1);
+    $count+= count($files1);
+
+    $path2 = public_path('pending-reservation/*.csv');
+    $files2= glob($path2);
+    $count += count($files2);
+
+    $path3 = public_path('pending-tamlik/*.csv');
+    $files3 = glob($path3);
+    $count += count($files3);
+
+
+    dd($count);
+
+    foreach($files1 as $file){
+        unlink($file);
+    }
+    foreach ($files2 as $file) {
+        unlink($file);
+    }
+    foreach ($files3 as $file) {
+        unlink($file);
+    }
 });
 
 require __DIR__ . '/auth.php';

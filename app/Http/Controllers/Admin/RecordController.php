@@ -14,13 +14,13 @@ class RecordController extends Controller
         session()->flashInput($request->input());
 
         if (isset($_GET['search'])) {
-            $records = DB::table('records')->orderBy('sub_id', 'asc')
+            $records = DB::table('records')->orderBy('sub_id', 'desc')
                 ->where('owner_name', 'like', '%' . $request->search . '%')
                 ->orWhere('block_number', $request->search)
                 ->paginate(25);
             return view('admin.records.index', compact('records'));
         } else {
-            $records = DB::table('records')->orderBy('sub_id', 'asc')->paginate(25);
+            $records = DB::table('records')->orderBy('sub_id', 'desc')->paginate(25);
             return view('admin.records.index', compact('records'));
         }
     }
