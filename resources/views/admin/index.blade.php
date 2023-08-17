@@ -15,7 +15,7 @@
                     <div class="flex flex-col card-body">
                         <!-- top -->
                         <div class="flex flex-row items-center justify-between">
-                            <i class="text-4xl text-indigo-700 fa-regular fa-clipboard"></i>
+                            <i class="text-4xl text-indigo-700 fa fa-city fa-flip" style="animation-duration: 3s"></i>
                         </div>
                         <div class="mt-4">
                             <h1 class="text-2xl font-bold text-gray-700">{{ $records }}</h1>
@@ -31,7 +31,7 @@
                 <div class="card">
                     <div class="flex flex-col card-body">
                         <div class="flex flex-row items-center justify-between">
-                            <i class="text-4xl text-red-400 fa-solid fa-lock"></i>
+                            <i class="text-4xl text-red-400 fa-solid fa-house-lock fa-flip" style="animation-duration: 3s"></i>
                         </div>
                         <div class="mt-4">
                             <h1 class="text-2xl font-bold text-gray-700">{{ $reservation }}</h1>
@@ -47,7 +47,7 @@
                 <div class="card">
                     <div class="flex flex-col card-body">
                         <div class="flex flex-row items-center justify-between">
-                            <i class="text-4xl text-yellow-700 fa-regular fa-pen-to-square "></i>
+                            <i class="text-4xl text-yellow-700 fa fa-house fa-flip" style="animation-duration: 3s"></i>
                         </div>
                         <div class="mt-4">
                             <h1 class="text-2xl font-bold text-gray-700">{{ $tamlik }}</h1>
@@ -63,7 +63,7 @@
                 <div class="card">
                     <div class="flex flex-col card-body">
                         <div class="flex flex-row items-center justify-between">
-                            <i class="text-4xl text-green-700 fa-solid fa-users"></i>
+                            <i class="text-4xl text-green-700 fa-solid fa-users fa-flip" style="animation-duration: 3s"></i>
                         </div>
                         <div class="mt-4">
                             <h1 class="text-2xl font-bold text-gray-700">{{ $users }}</h1>
@@ -76,6 +76,105 @@
             <!-- end card -->
         </div>
         <!-- End General Report -->
+
+        <!-- Start Recent Sales -->
+        <div class="col-span-2 mt-5 card xl:col-span-1">
+            <div class="card-header">
+                Files to prosses
+            </div>
+
+            <table class="w-full text-left table-auto">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border-r"></th>
+                        <th class="px-4 py-2 border-r">product</th>
+                        <th class="px-4 py-2 text-right border-r">count</th>
+                        <th class="px-4 py-2 text-right border-r">complete proceses</th>
+                        <th class="px-4 py-2 text-right">delete all files</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600">
+                    <tr>
+                        <td class="px-4 py-2 text-center text-red-500 border border-l-0">
+                            <i class="fa-solid fa-circle fa-beat-fade"></i>
+                        </td>
+                        <td class="px-4 py-2 border border-l-0">
+                            Records
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0">
+                            45
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0">
+                            <form action="#" method="post">
+                                <button type="submit">
+                                    <i class="text-xl text-green-700 fa-solid fa-sync fa-spin"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0 border-r-0">
+                            <form action="#" method="post">
+                                <button type="submit">
+                                    <i class="text-xl text-red-700 fa-solid fa-trash fa-bounce"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2 text-center text-yellow-500 border border-l-0">
+                            <i class="fa-solid fa-circle fa-beat-fade"></i>
+                        </td>
+                        <td class="px-4 py-2 border border-l-0">
+                            Reservations
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0">
+                            45
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0">
+                            <form action="#" method="post">
+                                <button type="submit">
+                                    <i class="text-xl text-green-700 fa-solid fa-sync fa-spin"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0 border-r-0">
+                            <form action="#" method="post">
+                                <button type="submit">
+                                    <i class="text-xl text-red-700 fa-solid fa-trash fa-bounce"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2 text-center text-green-500 border border-l-0">
+                            <i class="fa-solid fa-circle fa-beat-fade"></i>
+                        </td>
+                        <td class="px-4 py-2 border border-l-0">
+                            New Hit Titling
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0">
+                            45
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0">
+                            <form action="#" method="post">
+                                <button type="submit">
+                                    <i class="text-xl text-green-700 fa-solid fa-sync fa-spin"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td class="px-4 py-2 text-right border border-l-0 border-r-0">
+                            <form action="#" method="post">
+                                <button type="submit">
+                                    <i class="text-xl text-red-700 fa-solid fa-trash fa-bounce"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- End Recent Sales -->
+
     </div>
 
 
