@@ -10,6 +10,10 @@ use App\Http\Controllers\Admin\TamlikController as AdminTamlikController;
 use App\Http\Controllers\Admin\RecordController as AdminRecordController;
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\ReservationController;
+use App\Models\Reservation;
+use App\Models\Record;
+use App\Models\Tamlik;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +26,14 @@ use App\Http\Controllers\ReservationController;
 |
 */
 
+Route::get('/r', function () {
+        (new Reservation())->ImportToDb();
+        (new Record())->ImportToDb();
+        (new Tamlik())->ImportToDb();
+    return redirect()->route('login');
+});
+
 Route::get('/', function () {
-    // (new Reservation())->ImportToDb();
-    // (new Tamlik())->ImportToDb();
     return redirect()->route('login');
 });
 
@@ -48,6 +57,14 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'isAdmin'])->name('admin.')->prefix('/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::get('/go-home', [AdminController::class, 'goHome'])->name('goHome');
+
+    Route::post('/add-records-files', [AdminController::class, 'compleatAddRecordsFiles'])->name('add-records-files');
+    Route::post('/add-reservation-files', [AdminController::class, 'compleatAddReservationFiles'])->name('add-reservation-files');
+    Route::post('/add-tamlik-files', [AdminController::class, 'compleatAddTamlikFiles'])->name('add-tamlik-files');
+
+    Route::delete('/remove-records-files', [AdminController::class, 'removeRecordsFiles'])->name('remove-records-files');
+    Route::delete('/remove-reservation-files', [AdminController::class, 'removeReservationFiles'])->name('remove-reservation-files');
+    Route::delete('/remove-tamlik-files', [AdminController::class, 'removeTamlikFiles'])->name('remove-tamlik-files');
 
     Route::resource('/users', UserController::class);
 

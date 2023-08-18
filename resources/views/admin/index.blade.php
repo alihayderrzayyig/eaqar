@@ -102,17 +102,20 @@
                             Records
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0">
-                            45
+                            {{ $records_files }}
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0">
-                            <form action="#" method="post">
+                            <form action="{{route('admin.add-records-files')}}" method="post" target="_blank">
+                                @csrf
                                 <button type="submit">
                                     <i class="text-xl text-green-700 fa-solid fa-sync fa-spin"></i>
                                 </button>
                             </form>
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0 border-r-0">
-                            <form action="#" method="post">
+                            <form action="{{ route('admin.remove-records-files') }}" method="post">
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit">
                                     <i class="text-xl text-red-700 fa-solid fa-trash fa-bounce"></i>
                                 </button>
@@ -127,17 +130,20 @@
                             Reservations
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0">
-                            45
+                            {{ $reservation_files }}
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0">
-                            <form action="#" method="post">
+                            <form action="{{route('admin.add-reservation-files')}}" method="post" target="_blank">
+                                @csrf
                                 <button type="submit">
                                     <i class="text-xl text-green-700 fa-solid fa-sync fa-spin"></i>
                                 </button>
                             </form>
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0 border-r-0">
-                            <form action="#" method="post">
+                            <form action="{{ route('admin.remove-reservation-files') }}" method="post">
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit">
                                     <i class="text-xl text-red-700 fa-solid fa-trash fa-bounce"></i>
                                 </button>
@@ -152,17 +158,20 @@
                             New Hit Titling
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0">
-                            45
+                            {{ $tamlik_files }}
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0">
-                            <form action="#" method="post">
+                            <form action="{{route('admin.add-tamlik-files')}}" method="post" target="_blank">
+                                @csrf
                                 <button type="submit">
                                     <i class="text-xl text-green-700 fa-solid fa-sync fa-spin"></i>
                                 </button>
                             </form>
                         </td>
                         <td class="px-4 py-2 text-right border border-l-0 border-r-0">
-                            <form action="#" method="post">
+                            <form action="{{ route('admin.remove-tamlik-files') }}" method="post">
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit">
                                     <i class="text-xl text-red-700 fa-solid fa-trash fa-bounce"></i>
                                 </button>
@@ -174,7 +183,6 @@
             </table>
         </div>
         <!-- End Recent Sales -->
-
     </div>
 
 
