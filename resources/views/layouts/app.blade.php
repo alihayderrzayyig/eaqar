@@ -36,6 +36,12 @@
     </div>
 
 
+    <!-- Copyright Section -->
+    <div class="bg-gray-900 text-white p-2 text-center">
+        <div class="container mx-auto">
+            <p>دائرة التسجيل العقاري في هيت, برمجة علي حيدر &copy; </p>
+        </div>
+    </div>
 
 </body>
 
